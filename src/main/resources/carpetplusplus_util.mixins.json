@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "minVersion": "0.8.5",
+    "package": "uk.debb.carpetplusplus.util.mixin",
+    "compatibilityLevel": "JAVA_17",
+    "mixins": [
+        "MixinBootstrap"
+    ],
+    "injectors": {
+      "defaultRequire": 1
+    }
+  }
+  

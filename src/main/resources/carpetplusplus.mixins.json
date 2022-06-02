@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "uk.debb.carpetplusplus.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinBigDripleafBlock_dripleafCrushing",
+    "MixinBoneMealItem_renewableCalcite",
+    "MixinCaveSpider_cobwebWeaving",
+    "MixinDispenserBlock_dispensersMakeOres",
+    "MixinDragonEggBlock_dragonEggHatching",
+    "MixinHusk_shedSand_dropRedSand",
+    "MixinMagmaBlock_renewableTuff",
+    "MixinPiglinBrute_brutesDropBannerPatterns_brutesDropPigstepDiscs"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

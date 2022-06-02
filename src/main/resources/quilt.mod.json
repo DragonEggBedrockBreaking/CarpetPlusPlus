@@ -1,0 +1,52 @@
+{
+    "schema_version": 1,
+    "quilt_loader": {
+        "group": "uk.debb",
+        "id": "carpetplusplus",
+        "version": "{dev-env}",
+        "intermediate_mappings": "net.fabricmc:intermediary",
+        "metadata": {
+            "name": "CarpetPlusPlus",
+            "description": "Carpet extension that makes a lot of non-renewable items renewable.",
+            "contributors": {
+                "DragonEggBedrockBreaking": "Owner"
+            },
+            "contact": {
+                "sources": "https://github.com/DragonEggBedrockBreaking/CarpetPlusPlus",
+                "issues": "https://github.com/DragonEggBedrockBreaking/CarpetPlusPlus/issues"
+            },
+            "license": "MPL-2.0",
+            "icon": "assets/carpetplusplus/icon.png"
+        },
+        "depends": [
+            {
+                "id": "quilt_loader",
+                "versions": ">=0.16.1"
+            },
+            {
+                "id": "minecraft",
+                "versions": "1.18.2"
+            },
+            {
+                "id": "java",
+                "versions": ">=17"
+            },
+            {
+                "id": "carpet",
+                "versions": ">=1.4.69"
+            }
+        ]
+    },
+    "minecraft": {
+        "environment": "*"
+    },
+    "mixin": [
+        "carpetplusplus.mixins.json",
+        "carpetplusplus_util.mixins.json"
+    ],
+    "custom": {
+        "modmenu": {
+            "parent": "carpet"
+        }
+    }
+}
