@@ -35,6 +35,15 @@ I collected together a list of blocks that cannot be obtained renewably,
 through crafting, or through villagers, and made this mod to make many of them farmable.
 I was also unsatisfied with a couple of the aforementioned farming methods, so I wrote my own.
 
+My mod still does NOT make the following renewable since they are supposed to be very rare and valuable items:
+
+```
+Ancient Debris
+Diamond
+Enchanted Golden Apple
+Heart of the Sea
+```
+
 ## Here are the rules:
 
 ### renewableCalcite
