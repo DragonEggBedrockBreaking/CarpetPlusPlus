@@ -44,9 +44,7 @@
         "carpetplusplus.mixins.json",
         "carpetplusplus_util.mixins.json"
     ],
-    "custom": {
-        "modmenu": {
-            "parent": "carpet"
-        }
+    "modmenu": {
+        "parent": "carpet"
     }
 }
