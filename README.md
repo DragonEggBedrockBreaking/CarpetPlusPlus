@@ -128,6 +128,7 @@ I think that Carpet TIS Addition's own renewable dragon heads feature is unreaso
 ## Downloads
 
 You can download both stable releases of the mod, and also beta releases, from [Github Releases](https://github.com/DragonEggBedrockBreaking/CarpetPlusPlus/releases).
+You can also download stable releases from [Modrinth](https://modrinth.com/mod/carpetplusplus).
 
 ## License
 
