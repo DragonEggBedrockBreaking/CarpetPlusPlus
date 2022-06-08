@@ -9,7 +9,9 @@
     "MixinCaveSpider_cobwebWeaving",
     "MixinDispenserBlock_dispensersMakeOres",
     "MixinDragonEggBlock_dragonEggHatching",
+    "MixinEmerging_emergingWardenDropsDiscFragments",
     "MixinHusk_shedSand_dropRedSand",
+    "MixinLivingEntity_sonicBoomDropsEchoShard",
     "MixinMagmaBlock_renewableTuff",
     "MixinPiglinBrute_brutesDropBannerPatterns_brutesDropPigstepDiscs"
   ],

@@ -74,4 +74,16 @@ public class CarpetPlusPlusSettings {
         category = {CPP, FEATURE, SURVIVAL}
     )
     public static boolean dragonEggHatching = false;
+
+    @Rule(
+        desc = "When a warden attacks an entity with a sonic boom, an echo shard may drop next to the entity",
+        category = {CPP, FEATURE, SURVIVAL}
+    )
+    public static boolean sonicBoomDropsEchoShard = false;
+
+    @Rule(
+        desc = "When a warden emerges from the ground, between 1 and 3 disc fragments appear",
+        category = {CPP, FEATURE, SURVIVAL}
+    )
+    public static boolean emergingWardenDropsDiscFragments = false;
 }

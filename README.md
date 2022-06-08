@@ -125,6 +125,19 @@ which replaces the dragon egg with a dragon head.
 This works well together with the renewable dragon eggs from Carpet TIS Addition.
 I think that Carpet TIS Addition's own renewable dragon heads feature is unreasonable.
 
+### sonicBoomDropsEchoShard
+
+If an mob is hit by a sonic boom, an echo shard falls off it.
+Most mobs will die on the first hit, so you either need to constantly supply mobs,
+or you need to supply stronger mobs like iron golems and constantly heal them.
+This also works when a player is hit.
+
+### emergingWardenDropsDiscFragments
+
+When a warden emerges, it drops between 1 and 3 disc fragments.
+For an efficient farm, you would need to transport the wardens to the nether quickly,
+since a new warden cannot spawn near an old one, and a warden can only emerge once.
+
 ## Downloads
 
 You can download both stable releases of the mod, and also beta releases, from [Github Releases](https://github.com/DragonEggBedrockBreaking/CarpetPlusPlus/releases).
