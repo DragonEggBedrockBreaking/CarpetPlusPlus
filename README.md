@@ -138,6 +138,13 @@ When a warden emerges, it drops between 1 and 3 disc fragments.
 For an efficient farm, you would need to transport the wardens to the nether quickly,
 since a new warden cannot spawn near an old one, and a warden can only emerge once.
 
+### fallingBlockConversions
+
+First, a falling anvil needs to be hit into a chipped anvil block.
+This chipped anvil block must then be launched into a damaged anvil block. 
+This damaged anvil block must then be launched into a block that is unobtainable in survival.
+This block will then fall, if it is in a lazy chunk.
+
 ## Downloads
 
 You can download both stable releases of the mod, and also beta releases, from [GitHub Releases](https://github.com/DragonEggBedrockBreaking/CarpetPlusPlus/releases).

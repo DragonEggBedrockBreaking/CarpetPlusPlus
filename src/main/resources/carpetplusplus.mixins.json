@@ -10,6 +10,7 @@
     "MixinDispenserBlock_dispensersMakeOres",
     "MixinDragonEggBlock_dragonEggHatching",
     "MixinEmerging_emergingWardenDropsDiscFragments",
+    "MixinFallingBlockEntity_fallingBlockConversions",
     "MixinHusk_shedSand_dropRedSand",
     "MixinLivingEntity_sonicBoomDropsEchoShard",
     "MixinMagmaBlock_renewableTuff",
