@@ -1,6 +1,10 @@
 package uk.debb.carpetplusplus.mixin;
 
-import java.util.Random;
+import it.unimi.dsi.fastutil.objects.AbstractObject2ObjectMap.BasicEntry;
+import it.unimi.dsi.fastutil.objects.Object2ObjectMap.Entry;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
 import net.minecraft.core.dispenser.DispenseItemBehavior;
@@ -16,20 +20,17 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import it.unimi.dsi.fastutil.objects.AbstractObject2ObjectMap.BasicEntry;
-import it.unimi.dsi.fastutil.objects.Object2ObjectMap.Entry;
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import it.unimi.dsi.fastutil.objects.ObjectList;
 import uk.debb.carpetplusplus.CarpetPlusPlusSettings;
+
+import java.util.Random;
 
 @Mixin(DispenserBlock.class)
 public abstract class MixinDispenserBlock_dispensersMakeOres {
     /**
-     * @author DragonEggBedrockBreaking
-     * @reason this function gets the block that needs to be made
      * @param entry the item in the dispenser and the block in front if ot
      * @return the ore that needs to be made
+     * @author DragonEggBedrockBreaking
+     * @reason this function gets the block that needs to be made
      */
     @Unique
     private static Block getOreConversion(Entry<Item, Block> entry) {
@@ -64,13 +65,44 @@ public abstract class MixinDispenserBlock_dispensersMakeOres {
         }}.get(entry); // Returns the value of the entry provided in the map
     }
 
+    /**
+     * @param itemStack the stack of items in the dispensor
+     * @param cir       the returnable callback info (net.minecraft.core.dispenser.DispenseItemBehavior)
+     * @author DragonEggBedrockBreaking
+     */
+    @Inject(method = "getDispenseMethod", at = @At("HEAD"), cancellable = true)
+    private void editDispenseMethod(ItemStack itemStack, CallbackInfoReturnable<DispenseItemBehavior> cir) {
+        // Create a list of the possible items in the dispenser
+        ObjectList<Item> oreConversionList = new ObjectArrayList<Item>() {{
+            this.add(Items.COAL);
+            this.add(Items.RAW_COPPER);
+            this.add(Items.RAW_IRON);
+            this.add(Items.RAW_GOLD);
+            this.add(Items.COPPER_INGOT);
+            this.add(Items.IRON_INGOT);
+            this.add(Items.GOLD_INGOT);
+            this.add(Items.REDSTONE);
+            this.add(Items.LAPIS_LAZULI);
+            this.add(Items.DIAMOND);
+            this.add(Items.EMERALD);
+            this.add(Items.QUARTZ);
+            this.add(Items.GOLD_NUGGET);
+        }};
+        // If the item in the dispenser is one of them, run our custom code
+        // Note that we are unable to check whether the block in front is correct here, that is checked later
+        if (oreConversionList.contains(itemStack.getItem())) {
+            // Sets the return value to that of our custom code
+            cir.setReturnValue(new OreDispenserBehaviour());
+        }
+    }
+
     // Creates a class for our custom dispenser behaviour
     public static class OreDispenserBehaviour extends OptionalDispenseItemBehavior {
         /**
+         * @param source the data relating to the dispenser
+         * @param stack  the stack of items that the dispenser is going to use
          * @author DragonEggBedrockBreaking
          * @reason runs our conversion code instead of the vanilla, if the conditions are met
-         * @param source the data relating to the dispenser
-         * @param stack the stack of items that the dispenser is going to use
          */
         @Override
         protected ItemStack execute(BlockSource source, ItemStack stack) {
@@ -103,35 +135,4 @@ public abstract class MixinDispenserBlock_dispensersMakeOres {
             return super.execute(source, stack);
         }
     }
-
-    /**
-     * @author DragonEggBedrockBreaking
-     * @param itemStack the stack of items in the dispensor
-     * @param cir the returnable callback info (net.minecraft.core.dispenser.DispenseItemBehavior)
-     */
-    @Inject(method = "getDispenseMethod", at = @At("HEAD"), cancellable = true)
-    private void editDispenseMethod(ItemStack itemStack, CallbackInfoReturnable<DispenseItemBehavior> cir) {
-        // Create a list of the possible items in the dispenser
-        ObjectList<Item> oreConversionList = new ObjectArrayList<Item>() {{
-            this.add(Items.COAL);
-            this.add(Items.RAW_COPPER);
-            this.add(Items.RAW_IRON);
-            this.add(Items.RAW_GOLD);
-            this.add(Items.COPPER_INGOT);
-            this.add(Items.IRON_INGOT);
-            this.add(Items.GOLD_INGOT);
-            this.add(Items.REDSTONE);
-            this.add(Items.LAPIS_LAZULI);
-            this.add(Items.DIAMOND);
-            this.add(Items.EMERALD);
-            this.add(Items.QUARTZ);
-            this.add(Items.GOLD_NUGGET);
-        }};
-        // If the item in the dispenser is one of them, run our custom code
-        // Note that we are unable to check whether the block in front is correct here, that is checked later
-        if (oreConversionList.contains(itemStack.getItem())) {
-            // Sets the return value to that of our custom code
-            cir.setReturnValue(new OreDispenserBehaviour());
-        }
-    } 
 }

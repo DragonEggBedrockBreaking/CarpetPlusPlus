@@ -17,13 +17,13 @@ import uk.debb.carpetplusplus.CarpetPlusPlusSettings;
 @Mixin(BigDripleafBlock.class)
 public abstract class MixinBigDripleafBlock_dripleafCrushing {
     /**
+     * @param blockState the state of the big dripleaf
+     * @param level      the level the big dripleaf is in
+     * @param blockPos   the position of the big dripleaf
+     * @param entity     the entity on top of the dripleaf
+     * @param ci         the callback info
      * @author DragonEggBedrockBreaking
      * @reason iron golems crush big dripleaves
-     * @param blockState the state of the big dripleaf
-     * @param level the level the big dripleaf is in
-     * @param blockPos the position of the big dripleaf
-     * @param entity the entity on top of the dripleaf
-     * @param ci the callback info
      */
     @Inject(method = "entityInside", at = @At("HEAD"), cancellable = true)
     private void crushDripleaf(BlockState blockState, Level level, BlockPos blockPos, Entity entity, CallbackInfo ci) {

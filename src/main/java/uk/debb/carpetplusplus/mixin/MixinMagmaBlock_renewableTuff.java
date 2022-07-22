@@ -1,6 +1,5 @@
 package uk.debb.carpetplusplus.mixin;
 
-import java.util.Random;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -15,6 +14,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.spongepowered.asm.mixin.Mixin;
 import uk.debb.carpetplusplus.CarpetPlusPlusSettings;
 
+import java.util.Random;
+
 @Mixin(MagmaBlock.class)
 public abstract class MixinMagmaBlock_renewableTuff extends BlockBehaviour {
     public MixinMagmaBlock_renewableTuff(BlockBehaviour.Properties properties) {
@@ -22,15 +23,15 @@ public abstract class MixinMagmaBlock_renewableTuff extends BlockBehaviour {
     }
 
     /**
+     * @param blockState      the state of the magma
+     * @param level           the level that the magma is in
+     * @param blockPos        the position that the megma is in
+     * @param player          the player that is right clicking the magma
+     * @param interactionHand the hand that the player is using for the conversion
+     * @param blockHitResult  the result of the player using blaze powder on the magma
+     * @return the result of the interaction with the magma
      * @author DragonEggBedrockBreaking
      * @reason right clicking magma with blaze powder makes tuff
-     * @param blockState the state of the magma
-     * @param level the level that the magma is in
-     * @param blockPos the position that the megma is in
-     * @param player the player that is right clicking the magma
-     * @param interactionHand the hand that the player is using for the conversion
-     * @param blockHitResult the result of the player using blaze powder on the magma
-     * @return the result of the interaction with the magma
      */
     @SuppressWarnings("deprecation")
     @Override

@@ -1,6 +1,5 @@
 package uk.debb.carpetplusplus.mixin;
 
-import java.util.Random;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.BoneMealItem;
@@ -14,13 +13,15 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import uk.debb.carpetplusplus.CarpetPlusPlusSettings;
 
+import java.util.Random;
+
 @Mixin(BoneMealItem.class)
 public abstract class MixinBoneMealItem_renewableCalcite {
     /**
+     * @param useOnContext all of the data for the right click
+     * @param cir          the returnable callback info (net.minecraft.world.InteractionResult)
      * @author DragonEggBedrockBreaking
      * @reason bonemealing ice creates calcite
-     * @param useOnContext all of the data for the right click
-     * @param cir the returnable callback info (net.minecraft.world.InteractionResult)
      */
     @Inject(method = "useOn", at = @At("HEAD"), cancellable = true)
     private void boneMealIce(UseOnContext useOnContext, CallbackInfoReturnable<InteractionResult> cir) {

@@ -1,6 +1,5 @@
 package uk.debb.carpetplusplus.mixin;
 
-import java.util.Random;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -16,6 +15,8 @@ import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import uk.debb.carpetplusplus.CarpetPlusPlusSettings;
 
+import java.util.Random;
+
 @Mixin(Husk.class)
 public abstract class MixinHusk_shedSand_dropRedSand extends Entity {
     public MixinHusk_shedSand_dropRedSand(EntityType<? extends Entity> entityType, Level level) {
@@ -23,10 +24,10 @@ public abstract class MixinHusk_shedSand_dropRedSand extends Entity {
     }
 
     /**
+     * @param moverType how the husk is being moved
+     * @param vec3      how far the husk is being moved
      * @author DragonEggBedrockBreaking
      * @reason husks shed some sand when they move
-     * @param moverType how the husk is being moved
-     * @param vec3 how far the husk is being moved
      */
     @Override
     public void move(MoverType moverType, Vec3 vec3) {
@@ -41,7 +42,7 @@ public abstract class MixinHusk_shedSand_dropRedSand extends Entity {
         // - The husk is not standing still
         // - The husk is not moving much vertically
         if (CarpetPlusPlusSettings.husksShedSand && (blockOn.is(Blocks.SAND) || blockOn.is(Blocks.RED_SAND)) &&
-            moverType == MoverType.SELF && (vec3.x != 0 || vec3.z != 0) && Math.abs(vec3.y) <= 0.2) {
+                moverType == MoverType.SELF && (vec3.x != 0 || vec3.z != 0) && Math.abs(vec3.y) <= 0.2) {
             // If the conditions are met, there is a 1 in 130 chance of a sand item spawning
             Random random = new Random();
             if (random.nextInt(130) == 0) {
@@ -54,11 +55,11 @@ public abstract class MixinHusk_shedSand_dropRedSand extends Entity {
     }
 
     /**
+     * @param DamageSource the source of the damage that they are taking
+     * @param f            how much damage they are taking
+     * @return whether the husk is hurt
      * @author DragonEggBedrockBreaking
      * @reason husks drop red sand when hurt
-     * @param DamageSource the source of the damage that they are taking
-     * @param f how much damage they are taking
-     * @return whether the husk is hurt
      */
     @Override
     public boolean hurt(DamageSource damageSource, float f) {

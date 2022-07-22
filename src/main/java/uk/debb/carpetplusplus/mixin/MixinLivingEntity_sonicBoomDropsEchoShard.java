@@ -21,11 +21,11 @@ public abstract class MixinLivingEntity_sonicBoomDropsEchoShard extends Entity {
     }
 
     /**
+     * @param damageSource the source of damage to the entity
+     * @param f            the amount of damage the quantity is receiving
+     * @param cir          the returnable callback info (Boolean)
      * @author DragonEggBedrockBreaking
      * @reason entities may drop echo shards when hurt by warden
-     * @param damageSource the source of damage to the entity
-     * @param f the amount of damage the quantity is receiving
-     * @param cir the returnable callback info (Boolean)
      */
     @Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
     private void dropShard(DamageSource damageSource, float f, CallbackInfoReturnable<Boolean> cir) {

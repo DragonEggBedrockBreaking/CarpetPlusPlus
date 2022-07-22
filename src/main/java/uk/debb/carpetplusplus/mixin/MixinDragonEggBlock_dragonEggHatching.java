@@ -1,6 +1,5 @@
 package uk.debb.carpetplusplus.mixin;
 
-import java.util.Random;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -16,17 +15,19 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import uk.debb.carpetplusplus.CarpetPlusPlusSettings;
 
+import java.util.Random;
+
 @Mixin(DragonEggBlock.class)
 public abstract class MixinDragonEggBlock_dragonEggHatching {
     /**
-     * @author DragonEggBedrockBreaking
-     * @param blockState the state of the dragon egg
-     * @param level the level the dragon egg is in
-     * @param blockPos the position of the dragon egg
-     * @param player the player clicking the dragon egg
+     * @param blockState      the state of the dragon egg
+     * @param level           the level the dragon egg is in
+     * @param blockPos        the position of the dragon egg
+     * @param player          the player clicking the dragon egg
      * @param interactionHand the hand that the player is using to click the dragon egg
-     * @param blockHitResult the result of clicking the dragon egg
-     * @param cir the returnable callback info (Boolean)
+     * @param blockHitResult  the result of clicking the dragon egg
+     * @param cir             the returnable callback info (Boolean)
+     * @author DragonEggBedrockBreaking
      */
     @Inject(method = "use", at = @At("HEAD"), cancellable = true)
     private void hatch(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult, CallbackInfoReturnable<InteractionResult> cir) {
