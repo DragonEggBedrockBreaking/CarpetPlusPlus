@@ -25,13 +25,12 @@ public abstract class MixinMagmaBlock_renewableTuff extends BlockBehaviour {
     /**
      * @param blockState      the state of the magma
      * @param level           the level that the magma is in
-     * @param blockPos        the position that the megma is in
-     * @param player          the player that is right clicking the magma
+     * @param blockPos        the position that the magma is in
+     * @param player          the player that is right-clicking the magma
      * @param interactionHand the hand that the player is using for the conversion
      * @param blockHitResult  the result of the player using blaze powder on the magma
      * @return the result of the interaction with the magma
      * @author DragonEggBedrockBreaking
-     * @reason right clicking magma with blaze powder makes tuff
      */
     @SuppressWarnings("deprecation")
     @Override

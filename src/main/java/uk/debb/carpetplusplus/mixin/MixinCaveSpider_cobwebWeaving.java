@@ -18,14 +18,13 @@ public abstract class MixinCaveSpider_cobwebWeaving extends Spider {
 
     /**
      * @author DragonEggBedrockBreaking
-     * @reason convert string to cobwebs
      */
     @Override
     public void tick() {
         // Make sure that this is not run on the client
         if (this.level.isClientSide()) return;
-        // Runs all of the usual ticking code first
-        // Extends spider because cavve spider's ticking code is identical to spider's
+        // Runs all the usual ticking code first
+        // Extends spider because cave spider's ticking code is identical to spider's
         // Therefore cave spider also doesn't override the function
         super.tick();
         // Checks the carpet rule

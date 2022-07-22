@@ -55,7 +55,7 @@ so using bones (calcium rich) on ice (frozen water) seems appropriate.
 
 ### renewableTuff
 
-Right clicking magma with blaze powder has a 1 in 5 chance of converting it to tuff.
+Right-clicking magma with blaze powder has a 1 in 5 chance of converting it to tuff.
 The blaze powder is consumed even if the block is not converted.
 Tuff is formed in volcanic eruptions.
 so using blaze powder (fire-like) on magma (in volcanoes) seems appropriate.
@@ -119,7 +119,7 @@ It works best with Fabric Carpet's `piglinsSpawningInBastions` rule.
 
 ### dragonEggHatching
 
-Dragon eggs have a 3 in 11 chance of hatching when right clicked,
+Dragon eggs have a 3 in 11 chance of hatching when right-clicked,
 if they are 'heated up' by being placed on top of a magma block,
 which replaces the dragon egg with a dragon head.
 This works well together with the renewable dragon eggs from Carpet TIS Addition.
@@ -127,7 +127,7 @@ I think that Carpet TIS Addition's own renewable dragon heads feature is unreaso
 
 ### sonicBoomDropsEchoShard
 
-If an mob is hit by a sonic boom, an echo shard falls off it.
+If a mob is hit by a sonic boom, an echo shard falls off it.
 Most mobs will die on the first hit, so you either need to constantly supply mobs,
 or you need to supply stronger mobs like iron golems and constantly heal them.
 This also works when a player is hit.
@@ -140,7 +140,7 @@ since a new warden cannot spawn near an old one, and a warden can only emerge on
 
 ## Downloads
 
-You can download both stable releases of the mod, and also beta releases, from [Github Releases](https://github.com/DragonEggBedrockBreaking/CarpetPlusPlus/releases).
+You can download both stable releases of the mod, and also beta releases, from [GitHub Releases](https://github.com/DragonEggBedrockBreaking/CarpetPlusPlus/releases).
 You can also download stable releases from [Modrinth](https://modrinth.com/mod/carpetplusplus).
 
 ## License

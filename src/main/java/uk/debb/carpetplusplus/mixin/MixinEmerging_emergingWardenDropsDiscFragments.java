@@ -24,7 +24,7 @@ public abstract class MixinEmerging_emergingWardenDropsDiscFragments<E extends W
      * @author DragonEggBedrockBreaking
      * @reason drop between 2 and 5 disc fragments when the warden emerges
      */
-    @Inject(method = "stop", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "stop(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/monster/warden/Warden;J)V", at = @At("RETURN"))
     private void dropFragment(ServerLevel serverLevel, E warden, long l, CallbackInfo ci) {
         // Make sure that this is not run on the client
         if (warden.getLevel().isClientSide()) return;

@@ -27,7 +27,7 @@ public abstract class MixinLivingEntity_sonicBoomDropsEchoShard extends Entity {
      * @author DragonEggBedrockBreaking
      * @reason entities may drop echo shards when hurt by warden
      */
-    @Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "hurt", at = @At("HEAD"))
     private void dropShard(DamageSource damageSource, float f, CallbackInfoReturnable<Boolean> cir) {
         // Make sure that this is not run on the client
         if (this.level.isClientSide()) return;

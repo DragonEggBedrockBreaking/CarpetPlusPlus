@@ -21,37 +21,36 @@ public class OreDispenserBehaviour extends OptionalDispenseItemBehavior {
      * @param entry the item in the dispenser and the block in front if ot
      * @return the ore that needs to be made
      * @author DragonEggBedrockBreaking
-     * @reason this function gets the block that needs to be made
      */
     private static Block getOreConversion(Object2ObjectMap.Entry<Item, Block> entry) {
-        // Creates a map of all of the combinations of resources and blocks,
+        // Creates a map of all the combinations of resources and blocks,
         // And maps those combinations to the ores they make
         return new Object2ObjectOpenHashMap<Object2ObjectMap.Entry<Item, Block>, Block>() {{
-            this.put(new BasicEntry<Item, Block>(Items.COAL, Blocks.STONE), Blocks.COAL_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.COAL, Blocks.DEEPSLATE), Blocks.DEEPSLATE_COAL_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.RAW_COPPER, Blocks.STONE), Blocks.COPPER_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.RAW_COPPER, Blocks.DEEPSLATE), Blocks.DEEPSLATE_COPPER_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.RAW_IRON, Blocks.STONE), Blocks.IRON_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.RAW_IRON, Blocks.DEEPSLATE), Blocks.DEEPSLATE_IRON_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.RAW_GOLD, Blocks.STONE), Blocks.GOLD_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.RAW_GOLD, Blocks.DEEPSLATE), Blocks.DEEPSLATE_GOLD_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.COPPER_INGOT, Blocks.STONE), Blocks.COPPER_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.COPPER_INGOT, Blocks.DEEPSLATE), Blocks.DEEPSLATE_COPPER_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.IRON_INGOT, Blocks.STONE), Blocks.IRON_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.IRON_INGOT, Blocks.DEEPSLATE), Blocks.DEEPSLATE_IRON_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.GOLD_INGOT, Blocks.STONE), Blocks.GOLD_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.GOLD_INGOT, Blocks.DEEPSLATE), Blocks.DEEPSLATE_GOLD_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.REDSTONE, Blocks.STONE), Blocks.REDSTONE_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.REDSTONE, Blocks.DEEPSLATE), Blocks.DEEPSLATE_REDSTONE_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.LAPIS_LAZULI, Blocks.STONE), Blocks.LAPIS_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.LAPIS_LAZULI, Blocks.DEEPSLATE), Blocks.LAPIS_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.DIAMOND, Blocks.STONE), Blocks.DIAMOND_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.DIAMOND, Blocks.DEEPSLATE), Blocks.DIAMOND_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.EMERALD, Blocks.STONE), Blocks.EMERALD_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.EMERALD, Blocks.DEEPSLATE), Blocks.DEEPSLATE_EMERALD_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.QUARTZ, Blocks.NETHERRACK), Blocks.NETHER_QUARTZ_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.GOLD_NUGGET, Blocks.NETHERRACK), Blocks.NETHER_GOLD_ORE);
-            this.put(new BasicEntry<Item, Block>(Items.GOLD_NUGGET, Blocks.BLACKSTONE), Blocks.GILDED_BLACKSTONE);
+            this.put(new BasicEntry<>(Items.COAL, Blocks.STONE), Blocks.COAL_ORE);
+            this.put(new BasicEntry<>(Items.COAL, Blocks.DEEPSLATE), Blocks.DEEPSLATE_COAL_ORE);
+            this.put(new BasicEntry<>(Items.RAW_COPPER, Blocks.STONE), Blocks.COPPER_ORE);
+            this.put(new BasicEntry<>(Items.RAW_COPPER, Blocks.DEEPSLATE), Blocks.DEEPSLATE_COPPER_ORE);
+            this.put(new BasicEntry<>(Items.RAW_IRON, Blocks.STONE), Blocks.IRON_ORE);
+            this.put(new BasicEntry<>(Items.RAW_IRON, Blocks.DEEPSLATE), Blocks.DEEPSLATE_IRON_ORE);
+            this.put(new BasicEntry<>(Items.RAW_GOLD, Blocks.STONE), Blocks.GOLD_ORE);
+            this.put(new BasicEntry<>(Items.RAW_GOLD, Blocks.DEEPSLATE), Blocks.DEEPSLATE_GOLD_ORE);
+            this.put(new BasicEntry<>(Items.COPPER_INGOT, Blocks.STONE), Blocks.COPPER_ORE);
+            this.put(new BasicEntry<>(Items.COPPER_INGOT, Blocks.DEEPSLATE), Blocks.DEEPSLATE_COPPER_ORE);
+            this.put(new BasicEntry<>(Items.IRON_INGOT, Blocks.STONE), Blocks.IRON_ORE);
+            this.put(new BasicEntry<>(Items.IRON_INGOT, Blocks.DEEPSLATE), Blocks.DEEPSLATE_IRON_ORE);
+            this.put(new BasicEntry<>(Items.GOLD_INGOT, Blocks.STONE), Blocks.GOLD_ORE);
+            this.put(new BasicEntry<>(Items.GOLD_INGOT, Blocks.DEEPSLATE), Blocks.DEEPSLATE_GOLD_ORE);
+            this.put(new BasicEntry<>(Items.REDSTONE, Blocks.STONE), Blocks.REDSTONE_ORE);
+            this.put(new BasicEntry<>(Items.REDSTONE, Blocks.DEEPSLATE), Blocks.DEEPSLATE_REDSTONE_ORE);
+            this.put(new BasicEntry<>(Items.LAPIS_LAZULI, Blocks.STONE), Blocks.LAPIS_ORE);
+            this.put(new BasicEntry<>(Items.LAPIS_LAZULI, Blocks.DEEPSLATE), Blocks.LAPIS_ORE);
+            this.put(new BasicEntry<>(Items.DIAMOND, Blocks.STONE), Blocks.DIAMOND_ORE);
+            this.put(new BasicEntry<>(Items.DIAMOND, Blocks.DEEPSLATE), Blocks.DIAMOND_ORE);
+            this.put(new BasicEntry<>(Items.EMERALD, Blocks.STONE), Blocks.EMERALD_ORE);
+            this.put(new BasicEntry<>(Items.EMERALD, Blocks.DEEPSLATE), Blocks.DEEPSLATE_EMERALD_ORE);
+            this.put(new BasicEntry<>(Items.QUARTZ, Blocks.NETHERRACK), Blocks.NETHER_QUARTZ_ORE);
+            this.put(new BasicEntry<>(Items.GOLD_NUGGET, Blocks.NETHERRACK), Blocks.NETHER_GOLD_ORE);
+            this.put(new BasicEntry<>(Items.GOLD_NUGGET, Blocks.BLACKSTONE), Blocks.GILDED_BLACKSTONE);
         }}.get(entry); // Returns the value of the entry provided in the map
     }
 
@@ -59,7 +58,6 @@ public class OreDispenserBehaviour extends OptionalDispenseItemBehavior {
      * @param source the data relating to the dispenser
      * @param stack  the stack of items that the dispenser is going to use
      * @author DragonEggBedrockBreaking
-     * @reason runs our conversion code instead of the vanilla, if the conditions are met
      */
     @Override
     protected ItemStack execute(BlockSource source, ItemStack stack) {

@@ -27,7 +27,6 @@ public abstract class MixinHusk_shedSand_dropRedSand extends Entity {
      * @param moverType how the husk is being moved
      * @param vec3      how far the husk is being moved
      * @author DragonEggBedrockBreaking
-     * @reason husks shed some sand when they move
      */
     @Override
     public void move(MoverType moverType, Vec3 vec3) {
@@ -55,11 +54,10 @@ public abstract class MixinHusk_shedSand_dropRedSand extends Entity {
     }
 
     /**
-     * @param DamageSource the source of the damage that they are taking
+     * @param damageSource the source of the damage that they are taking
      * @param f            how much damage they are taking
      * @return whether the husk is hurt
      * @author DragonEggBedrockBreaking
-     * @reason husks drop red sand when hurt
      */
     @Override
     public boolean hurt(DamageSource damageSource, float f) {

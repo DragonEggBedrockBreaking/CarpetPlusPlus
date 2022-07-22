@@ -25,7 +25,7 @@ public abstract class MixinBigDripleafBlock_dripleafCrushing {
      * @author DragonEggBedrockBreaking
      * @reason iron golems crush big dripleaves
      */
-    @Inject(method = "entityInside", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "entityInside", at = @At("HEAD"))
     private void crushDripleaf(BlockState blockState, Level level, BlockPos blockPos, Entity entity, CallbackInfo ci) {
         // Make sure that this is not run on the client
         if (level.isClientSide()) return;

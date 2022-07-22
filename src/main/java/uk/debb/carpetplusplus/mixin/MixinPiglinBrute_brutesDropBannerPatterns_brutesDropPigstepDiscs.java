@@ -25,7 +25,6 @@ public abstract class MixinPiglinBrute_brutesDropBannerPatterns_brutesDropPigste
     /**
      * @param damageSource the source of the damage that they are taking
      * @author DragonEggBedrockBreaking
-     * @reason piglin brutes can drop some things when killed by fortress mobs
      */
     @Override
     public void die(DamageSource damageSource) {

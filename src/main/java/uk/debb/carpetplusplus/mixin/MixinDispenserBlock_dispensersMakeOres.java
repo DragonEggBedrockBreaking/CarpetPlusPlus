@@ -16,14 +16,14 @@ import uk.debb.carpetplusplus.dispenser.OreDispenserBehaviour;
 @Mixin(DispenserBlock.class)
 public abstract class MixinDispenserBlock_dispensersMakeOres {
     /**
-     * @param itemStack the stack of items in the dispensor
+     * @param itemStack the stack of items in the dispenser
      * @param cir       the returnable callback info (net.minecraft.core.dispenser.DispenseItemBehavior)
      * @author DragonEggBedrockBreaking
      */
     @Inject(method = "getDispenseMethod", at = @At("HEAD"), cancellable = true)
     private void editDispenseMethod(ItemStack itemStack, CallbackInfoReturnable<DispenseItemBehavior> cir) {
         // Create a list of the possible items in the dispenser
-        ObjectList<Item> oreConversionList = new ObjectArrayList<Item>() {{
+        ObjectList<Item> oreConversionList = new ObjectArrayList<>() {{
             this.add(Items.COAL);
             this.add(Items.RAW_COPPER);
             this.add(Items.RAW_IRON);

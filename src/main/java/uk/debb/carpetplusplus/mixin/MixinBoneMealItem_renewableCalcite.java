@@ -18,7 +18,7 @@ import java.util.Random;
 @Mixin(BoneMealItem.class)
 public abstract class MixinBoneMealItem_renewableCalcite {
     /**
-     * @param useOnContext all of the data for the right click
+     * @param useOnContext all the data for the right click
      * @param cir          the returnable callback info (net.minecraft.world.InteractionResult)
      * @author DragonEggBedrockBreaking
      * @reason bonemealing ice creates calcite
