@@ -15,7 +15,8 @@ import uk.debb.carpetplusplus.anvil.AnvilStaticFields;
 
 @Mixin(FallingBlockEntity.class)
 public abstract class MixinFallingBlockEntity_fallingBlockConversions extends Entity {
-    @Shadow private BlockState blockState;
+    @Shadow
+    private BlockState blockState;
 
     public MixinFallingBlockEntity_fallingBlockConversions(EntityType<? extends Entity> entityType, Level level) {
         super(entityType, level);
@@ -31,7 +32,7 @@ public abstract class MixinFallingBlockEntity_fallingBlockConversions extends En
         if (CarpetPlusPlusSettings.fallingBlockConversions) {
             // If the block is one of the first anvils
             if ((this.blockState.is(Blocks.ANVIL) && AnvilStaticFields.anvilStage == 1) ||
-                (this.blockState.is(Blocks.CHIPPED_ANVIL) && AnvilStaticFields.anvilStage == 2)) {
+                    (this.blockState.is(Blocks.CHIPPED_ANVIL) && AnvilStaticFields.anvilStage == 2)) {
                 // Get all horizontal directions
                 for (Direction direction : Direction.Plane.HORIZONTAL) {
                     // Store some data in variables
@@ -45,7 +46,7 @@ public abstract class MixinFallingBlockEntity_fallingBlockConversions extends En
                         AnvilStaticFields.anvilStage += 1;
                     }
                 }
-            // However, if it is a last stage anvil
+                // However, if it is a last stage anvil
             } else if (this.blockState.is(Blocks.DAMAGED_ANVIL) && AnvilStaticFields.anvilStage == 3) {
                 // Get all horizontal directions
                 for (Direction direction : Direction.Plane.HORIZONTAL) {

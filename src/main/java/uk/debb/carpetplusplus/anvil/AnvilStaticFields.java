@@ -8,8 +8,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 public class AnvilStaticFields {
-    public static short anvilStage = 1;
-
     public static final ObjectList<Block> unobtainableBlockList = new ObjectArrayList<>() {{
         add(Blocks.BEDROCK);
         add(Blocks.END_PORTAL_FRAME);
@@ -34,9 +32,9 @@ public class AnvilStaticFields {
         add(Blocks.CHAIN_COMMAND_BLOCK);
         add(Blocks.REPEATING_COMMAND_BLOCK);
     }};
-
     public static final Object2ObjectMap<Block, Block> anvilMap = new Object2ObjectOpenHashMap<>() {{
         put(Blocks.ANVIL, Blocks.CHIPPED_ANVIL);
         put(Blocks.CHIPPED_ANVIL, Blocks.DAMAGED_ANVIL);
     }};
+    public static short anvilStage = 1;
 }
