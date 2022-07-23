@@ -14,7 +14,8 @@
     "MixinHusk_shedSand_dropRedSand",
     "MixinLivingEntity_sonicBoomDropsEchoShard",
     "MixinMagmaBlock_renewableTuff",
-    "MixinPiglinBrute_brutesDropBannerPatterns_brutesDropPigstepDiscs"
+    "MixinPiglinBrute_brutesDropBannerPatterns_brutesDropPigstepDiscs",
+    "MixinPistonBaseBlock_retractableWorldBorder"
   ],
   "injectors": {
     "defaultRequire": 1

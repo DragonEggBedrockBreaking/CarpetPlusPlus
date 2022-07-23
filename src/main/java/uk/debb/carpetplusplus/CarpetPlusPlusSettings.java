@@ -93,4 +93,10 @@ public class CarpetPlusPlusSettings {
             category = {CPP, FEATURE, SURVIVAL, EXPERIMENTAL}
     )
     public static boolean fallingBlockConversions = false;
+
+    @Rule(
+            desc = "When a sticky piston retracts the world border, it 'pulls out' a barrier block",
+            category = {CPP, FEATURE, SURVIVAL, EXPERIMENTAL}
+    )
+    public static boolean retractableWorldBorder = false;
 }
