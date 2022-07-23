@@ -1,8 +1,6 @@
 package uk.debb.carpetplusplus.dispenser;
 
-import it.unimi.dsi.fastutil.objects.AbstractObject2ObjectMap;
-import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.objects.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
 import net.minecraft.core.dispenser.OptionalDispenseItemBehavior;
@@ -17,6 +15,22 @@ import uk.debb.carpetplusplus.CarpetPlusPlusSettings;
 import java.util.Random;
 
 public class OreDispenserBehaviour extends OptionalDispenseItemBehavior {
+    public static final ObjectList<Item> oreConversionList = new ObjectArrayList<>() {{
+        add(Items.COAL);
+        add(Items.RAW_COPPER);
+        add(Items.RAW_IRON);
+        add(Items.RAW_GOLD);
+        add(Items.COPPER_INGOT);
+        add(Items.IRON_INGOT);
+        add(Items.GOLD_INGOT);
+        add(Items.REDSTONE);
+        add(Items.LAPIS_LAZULI);
+        add(Items.DIAMOND);
+        add(Items.EMERALD);
+        add(Items.QUARTZ);
+        add(Items.GOLD_NUGGET);
+    }};
+
     /**
      * @param entry the item in the dispenser and the block in front if ot
      * @return the ore that needs to be made
