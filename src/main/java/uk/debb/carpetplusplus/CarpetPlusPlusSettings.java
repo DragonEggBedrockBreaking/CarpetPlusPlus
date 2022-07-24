@@ -99,4 +99,10 @@ public class CarpetPlusPlusSettings {
             category = {CPP, FEATURE, SURVIVAL, EXPERIMENTAL}
     )
     public static boolean retractableWorldBorder = false;
+
+    @Rule(
+            desc = "A retracting piston pulls entities through it",
+            category = {CPP, FEATURE, CREATIVE, SURVIVAL}
+    )
+    public static boolean pistonTranslocation = false;
 }

@@ -15,6 +15,7 @@
     "MixinLivingEntity_sonicBoomDropsEchoShard",
     "MixinMagmaBlock_renewableTuff",
     "MixinPiglinBrute_brutesDropBannerPatterns_brutesDropPigstepDiscs",
+    "MixinPistonBaseBlock_pistonTranslocation",
     "MixinPistonBaseBlock_retractableWorldBorder"
   ],
   "injectors": {

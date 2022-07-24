@@ -150,6 +150,10 @@ This block will then fall, if it is in a lazy chunk.
 If a sticky piston retracts while facing towards and touching the world border,
 a barrier block is 'retracted' out of it. That barrier block is still immovable.
 
+### pistonTranslocation (IN FUTURE RELEASE)
+
+When a piston retracts, it 'retracts' all entities through it.
+
 ## Downloads
 
 You can download both stable releases of the mod, and also beta releases, from [GitHub Releases](https://github.com/DragonEggBedrockBreaking/CarpetPlusPlus/releases).
