@@ -39,7 +39,6 @@ My mod still does NOT make the following renewable since they are supposed to be
 
 ```
 Ancient Debris
-Diamond
 Enchanted Golden Apple
 Heart of the Sea
 ```
