@@ -38,7 +38,7 @@ public abstract class MixinFallingBlockEntity_fallingBlockConversions extends En
                     BlockPos pos = this.blockPosition().relative(direction);
                     BlockState state = this.level.getBlockState(pos);
                     // If the block is in a lazy chunk, and the block is unobtainable
-                    if (AnvilStaticFields.unobtainableBlockList.contains(state.getBlock())/* && !level.shouldTickBlocksAt(pos)*/) {
+                    if (AnvilStaticFields.unobtainableBlockList.contains(state.getBlock()) && !level.shouldTickBlocksAt(pos)) {
                         // Turn the unobtainable block into a falling block
                         FallingBlockEntity.fall(this.level, pos, state);
                     }
