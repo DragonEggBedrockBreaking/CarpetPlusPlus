@@ -139,10 +139,7 @@ since a new warden cannot spawn near an old one, and a warden can only emerge on
 
 ### fallingBlockConversions (IN FUTURE RELEASES)
 
-First, a falling anvil needs to be hit into a chipped anvil block.
-This chipped anvil block must then be launched into a damaged anvil block. 
-This damaged anvil block must then be launched into a block that is unobtainable in survival.
-This block will then fall, if it is in a lazy chunk.
+An anvil that hits a block will make it fall, if it is in a lazy chunk.
 
 ### retractableWorldBorder (IN FUTURE RELEASES)
 

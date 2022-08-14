@@ -30,24 +30,8 @@ public abstract class MixinFallingBlockEntity_fallingBlockConversions extends En
     protected void onInsideBlock(BlockState arg) {
         // Check if the gamerule is enabled
         if (CarpetPlusPlusSettings.fallingBlockConversions) {
-            // If the block is one of the first anvils
-            if ((this.blockState.is(Blocks.ANVIL) && AnvilStaticFields.anvilStage == 1) ||
-                    (this.blockState.is(Blocks.CHIPPED_ANVIL) && AnvilStaticFields.anvilStage == 2)) {
-                // Get all horizontal directions
-                for (Direction direction : Direction.Plane.HORIZONTAL) {
-                    // Store some data in variables
-                    BlockPos pos = this.blockPosition().relative(direction);
-                    BlockState state = this.level.getBlockState(pos);
-                    // If the anvil is the next stage down
-                    if (state.is(AnvilStaticFields.anvilMap.get(this.blockState.getBlock()))) {
-                        // Turn the new anvil into a falling block
-                        FallingBlockEntity.fall(this.level, pos, state);
-                        // Bump stage
-                        AnvilStaticFields.anvilStage += 1;
-                    }
-                }
-                // However, if it is a last stage anvil
-            } else if (this.blockState.is(Blocks.DAMAGED_ANVIL) && AnvilStaticFields.anvilStage == 3) {
+            // If the block is an anvil
+            if (this.blockState.is(Blocks.ANVIL)) {
                 // Get all horizontal directions
                 for (Direction direction : Direction.Plane.HORIZONTAL) {
                     // Store some data in variables
@@ -57,8 +41,6 @@ public abstract class MixinFallingBlockEntity_fallingBlockConversions extends En
                     if (AnvilStaticFields.unobtainableBlockList.contains(state.getBlock())/* && !level.shouldTickBlocksAt(pos)*/) {
                         // Turn the unobtainable block into a falling block
                         FallingBlockEntity.fall(this.level, pos, state);
-                        // Reset anvil stage
-                        AnvilStaticFields.anvilStage = 1;
                     }
                 }
             }

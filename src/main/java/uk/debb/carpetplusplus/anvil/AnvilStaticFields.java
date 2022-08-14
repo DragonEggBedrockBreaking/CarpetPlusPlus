@@ -36,5 +36,4 @@ public class AnvilStaticFields {
         put(Blocks.ANVIL, Blocks.CHIPPED_ANVIL);
         put(Blocks.CHIPPED_ANVIL, Blocks.DAMAGED_ANVIL);
     }};
-    public static short anvilStage = 1;
 }
