@@ -140,6 +140,7 @@ since a new warden cannot spawn near an old one, and a warden can only emerge on
 ### fallingBlockConversions (IN FUTURE RELEASES)
 
 An anvil that hits a block will make it fall, if it is in a lazy chunk.
+This falling block will break into an item like other falling blocks only if the player is in the same chunk.
 
 ### retractableWorldBorder (IN FUTURE RELEASES)
 
