@@ -32,8 +32,4 @@ public class AnvilStaticFields {
         add(Blocks.CHAIN_COMMAND_BLOCK);
         add(Blocks.REPEATING_COMMAND_BLOCK);
     }};
-    public static final Object2ObjectMap<Block, Block> anvilMap = new Object2ObjectOpenHashMap<>() {{
-        put(Blocks.ANVIL, Blocks.CHIPPED_ANVIL);
-        put(Blocks.CHIPPED_ANVIL, Blocks.DAMAGED_ANVIL);
-    }};
 }
