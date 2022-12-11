@@ -87,7 +87,7 @@ public class OreDispenserBehaviour extends OptionalDispenseItemBehavior {
             // Uses the position to get the block in front of the dispenser
             Block frontBlock = source.getLevel().getBlockState(frontBlockPos).getBlock();
             // Creates an entry containing the item that the dispenser is using and the block in front of it
-            Object2ObjectMap.Entry<Item, Block> entry = new AbstractObject2ObjectMap.BasicEntry<Item, Block>(stack.getItem(), frontBlock);
+            Object2ObjectMap.Entry<Item, Block> entry = new AbstractObject2ObjectMap.BasicEntry<>(stack.getItem(), frontBlock);
             // Gets the block that needs to be converted using the entry
             Block changeTo = getOreConversion(entry);
             // If the combination is valid

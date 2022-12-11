@@ -1,14 +1,14 @@
 package uk.debb.carpetplusplus.util.mixin;
 
-import net.minecraft.server.Bootstrap;
+import net.minecraft.core.registries.BuiltInRegistries;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import uk.debb.carpetplusplus.CarpetPlusPlusServer;
 
-@Mixin(Bootstrap.class)
-public abstract class MixinBootstrap {
+@Mixin(BuiltInRegistries.class)
+public abstract class MixinBuiltInRegistries {
     /**
      * @param ci callback info
      * @author DragonEggBedrockBreaking
@@ -18,7 +18,7 @@ public abstract class MixinBootstrap {
             method = "bootStrap",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/core/Registry;freezeBuiltins()V"
+                    target = "Lnet/minecraft/core/registries/BuiltInRegistries;freeze()V"
             )
     )
     private static void onInitialize(CallbackInfo ci) {

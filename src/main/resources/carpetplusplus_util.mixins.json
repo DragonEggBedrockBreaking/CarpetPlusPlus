@@ -4,7 +4,7 @@
     "package": "uk.debb.carpetplusplus.util.mixin",
     "compatibilityLevel": "JAVA_17",
     "mixins": [
-        "MixinBootstrap"
+      "MixinBuiltInRegistries"
     ],
     "injectors": {
       "defaultRequire": 1
